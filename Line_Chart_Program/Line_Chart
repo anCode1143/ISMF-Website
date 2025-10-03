@@ -1,0 +1,46 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.ticker import FuncFormatter
+
+def csv_reader(filename):
+    """
+    This is function (written by lalith) that reads a CSV file which will contain stock data and plots it over time but can be adjusted according 
+    to the requriment/spec of the csv submitted by simply changing certain parts
+    
+    """
+    try:
+        df = pd.read_csv(filename)
+
+        # Ensure 'Date' and 'AAPL_Close' columns exist and convert 'Date' to datetime
+        if 'Date' not in df.columns or 'AAPL_Close' not in df.columns:
+            raise ValueError("CSV must contain 'Date' and 'AAPL_Close' columns")
+
+        df['Date'] = pd.to_datetime(df['Date'])
+
+        # Plot the data
+        plt.figure(figsize=(12, 6))
+        plt.plot(df['Date'], df['AAPL_Close'], label='AAPL Close Price', color="blue")
+
+        # Format y-axis with commas
+        plt.gca().yaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{int(x):,}"))
+
+        plt.xlabel('Date')
+        plt.ylabel('Close Price (USD)')
+        plt.title('AAPL Closing Price Over Time')
+        plt.xticks(rotation=45)
+        plt.legend()
+        plt.grid(True, linestyle="--", alpha=0.6)
+        plt.tight_layout()
+        plt.show()
+
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+    except Exception as e:
+        print(f"Error: {e}")
+
+def main():
+    filename = 'AAPL_series.csv'
+    csv_reader(filename)
+
+if __name__ == "__main__":
+    main()
