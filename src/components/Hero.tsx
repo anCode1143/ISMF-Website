@@ -67,7 +67,7 @@ export const Hero = () => {
               Irish Student Managed Fund
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed tracking-wide">
-              Where education meets empowerment. Revolutionising the student experience through a unique investment platform tailored for students.
+            Welcome to the Irish SMF, where education meets empowerment. We're on a mission to revolutionise the student experience by providing a unique investment platform tailored for students.
             </p>
           </motion.div>
           
@@ -117,9 +117,9 @@ export const Hero = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-8 md:gap-16">
-            <Stat label="Assets Under Management" value={2.3} suffix="M+" />
-            <Stat label="Active Members" value={120} />
-            <Stat label="Annual Return" value={14.5} suffix="%" />
+            <Stat label="Assets Under Management" value={[insert number here]} suffix="M+" />
+            <Stat label="Active Members" value={[insert number here]} />
+            <Stat label="Annual Return" value={[insert number here]} suffix="%" />
           </div>
         </div>
       </motion.div>
