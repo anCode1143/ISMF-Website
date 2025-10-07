@@ -27,7 +27,7 @@ const ChartCard = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   
   const getTrendColor = (trend: string) => {
-    return trend === 'increasing' ? 'text-red-600' : 'text-green-600';
+    return trend === 'increasing' ? 'text-red-400' : 'text-green-400';
   };
   
   const getTrendIcon = (trend: string) => {
@@ -37,18 +37,18 @@ const ChartCard = ({
   return (
     <Card className="p-6 bg-[#26437E] border-0 shadow-md rounded-2xl hover:shadow-lg transition-all duration-300 cursor-pointer group">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-lg font-semibold text-[#011936]">{title}</h3>
+        <h3 className="text-lg font-semibold text-white">{title}</h3>
         <TrendingUp className="h-5 w-5 text-[#6184D8] group-hover:text-[#1D3461] transition-colors" />
       </div>
       
       <div className="mb-4">
-        <div className="text-3xl font-bold text-[#011936] mb-1">
+        <div className="text-3xl font-bold text-white mb-1">
           {value}%
         </div>
         <div className={`text-sm font-medium flex items-center gap-1 ${getTrendColor(trend)}`}>
           <span>{getTrendIcon(trend)}</span>
           <span>{Math.abs(change)}%</span>
-          <span className="text-gray-600">from last month</span>
+          <span className="text-white/70">from last month</span>
         </div>
       </div>
 
@@ -140,8 +140,8 @@ const ChartCard = ({
             </div>
             
             <div className="bg-[#26437E] p-4 rounded-lg border border-[#6184D8]/20">
-              <h4 className="font-semibold text-[#011936] mb-2">Research Insights</h4>
-              <p className="text-sm text-[#011936]/80 leading-relaxed">
+              <h4 className="font-semibold text-white mb-2">Research Insights</h4>
+              <p className="text-sm text-white/90 leading-relaxed">
                 {dataKey === 'inflation' 
                   ? "Recent inflation trends show a gradual moderation from peak levels, indicating potential easing of price pressures. This trend suggests the effectiveness of monetary policy measures and could signal a more stable economic environment for investment decisions."
                   : "Unemployment rates continue to show resilience in the labor market, with consistent improvements indicating strong economic fundamentals. This trend supports consumer spending and overall economic stability, creating favorable conditions for equity investments."
