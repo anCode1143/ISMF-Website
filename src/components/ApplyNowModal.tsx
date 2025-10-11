@@ -7,14 +7,38 @@ interface Division {
   id: string;
   name: string;
   isOpen: boolean;
+  formUrl?: string;
 }
 
 const divisions: Division[] = [
-  { id: 'alternative-investments', name: 'Alternative Investments Division', isOpen: true },
-  { id: 'marketing', name: 'Marketing', isOpen: true },
-  { id: 'quant-research', name: 'Quant Research', isOpen: true },
-  { id: 'macro-research', name: 'Macro Research (Closed)', isOpen: false },
-  { id: 'technology', name: 'Technology Division (Closed)', isOpen: false },
+  { 
+    id: 'alternative-investments', 
+    name: 'Alternative Investments Division', 
+    isOpen: true,
+    formUrl: 'https://docs.google.com/forms/d/1nMs0WqAzUG1FrnJuA40rRY6K_bjfHai2P0v9N7LuNRg/viewform?pli=1&pli=1&edit_requested=true'
+  },
+  { 
+    id: 'marketing', 
+    name: 'Marketing', 
+    isOpen: true,
+    formUrl: 'https://docs.google.com/forms/d/16iCt1UCpAxS4EviWoWbmxrpmsR4wJVhC2LYTKF6OI7o/edit'
+  },
+  { 
+    id: 'quant-research', 
+    name: 'Quant Research', 
+    isOpen: true,
+    formUrl: 'https://docs.google.com/forms/d/1PvmRULplhAxoBW_S2bFYHVRvP8WTaiZoj8ztlGAhg2E/edit'
+  },
+  { 
+    id: 'macro-research', 
+    name: 'Macro Research (Closed)', 
+    isOpen: false 
+  },
+  { 
+    id: 'technology', 
+    name: 'Technology Division (Closed)', 
+    isOpen: false 
+  },
 ];
 
 interface ApplyNowModalProps {
@@ -33,13 +57,15 @@ export const ApplyNowModal: React.FC<ApplyNowModalProps> = ({ isOpen, onClose })
 
   const handleContinue = () => {
     if (selectedDivision) {
-      // Here you can handle the continuation logic
-      // For now, we'll just log and close
-      console.log('Selected division:', selectedDivision);
+      // Find the selected division and get its form URL
+      const division = divisions.find(d => d.id === selectedDivision);
       
-      // You can redirect to an application form or handle next steps
-      // window.location.href = `/apply/${selectedDivision}`;
+      if (division && division.formUrl) {
+        // Open the Google Form in a new tab
+        window.open(division.formUrl, '_blank', 'noopener,noreferrer');
+      }
       
+      // Close the modal and reset selection
       onClose();
       setSelectedDivision(null);
     }
