@@ -79,7 +79,7 @@ The component currently uses realistic mock data for demonstration purposes.
   - Primary: `#6184D8` (Cornflower)
   - Secondary: `#1D3461` (Delft)
   - Text: `#011936` (Oxford)
-  - Chart Background: `#FDEDF0` (Blush)
+  - Chart Background: `#81B9EE` (Blush)
 
 ## API Integration Examples
 

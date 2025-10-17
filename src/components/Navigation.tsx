@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Linkedin } from "lucide-react";
+import { useApplyModal } from "@/hooks/useApplyModal";
 import ismfLogo from "@/assets/ismf-logo.png";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { openModal } = useApplyModal();
 
   const navLinks = [
     { label: "Home", href: "#home" },
@@ -43,7 +45,7 @@ export const Navigation = () => {
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <Button className="bg-cornflower text-white hover:brightness-95">Apply Now</Button>
+            <Button onClick={openModal} className="bg-cornflower text-white hover:brightness-95">Apply Now</Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -82,7 +84,7 @@ export const Navigation = () => {
                   <Linkedin className="h-6 w-6" />
                 </a>
               </div>
-              <Button className="w-full bg-cornflower text-white hover:brightness-95">Apply Now</Button>
+              <Button onClick={openModal} className="w-full bg-cornflower text-white hover:brightness-95">Apply Now</Button>
             </div>
           </div>
         )}

@@ -14,8 +14,7 @@ const ChartCard = ({
   trend, 
   color, 
   dataKey, 
-  historicalData,
-  children 
+  historicalData
 }: {
   title: string;
   value: number;
@@ -24,7 +23,6 @@ const ChartCard = ({
   color: string;
   dataKey: string;
   historicalData: any[];
-  children: React.ReactNode;
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
@@ -37,7 +35,7 @@ const ChartCard = ({
   };
 
   return (
-    <Card className="p-6 bg-[#FDEDF0] border-0 shadow-md rounded-2xl hover:shadow-lg transition-all duration-300 cursor-pointer group">
+    <Card className="p-6 bg-[#81B9EE] border-0 shadow-md rounded-2xl hover:shadow-lg transition-all duration-300 cursor-pointer group">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-lg font-semibold text-[#011936]">{title}</h3>
         <TrendingUp className="h-5 w-5 text-[#6184D8] group-hover:text-[#1D3461] transition-colors" />
@@ -50,7 +48,7 @@ const ChartCard = ({
         <div className={`text-sm font-medium flex items-center gap-1 ${getTrendColor(trend)}`}>
           <span>{getTrendIcon(trend)}</span>
           <span>{Math.abs(change)}%</span>
-          <span className="text-gray-600">from last month</span>
+          <span className="text-[#011936]/70">from last month</span>
         </div>
       </div>
 
@@ -141,7 +139,7 @@ const ChartCard = ({
               </ResponsiveContainer>
             </div>
             
-            <div className="bg-[#FDEDF0] p-4 rounded-lg border border-[#6184D8]/20">
+            <div className="bg-[#81B9EE] p-4 rounded-lg border border-[#6184D8]/20">
               <h4 className="font-semibold text-[#011936] mb-2">Research Insights</h4>
               <p className="text-sm text-[#011936]/80 leading-relaxed">
                 {dataKey === 'inflation' 
@@ -180,7 +178,7 @@ export const MacroDashboard = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[1, 2].map((i) => (
-              <Card key={i} className="p-6 bg-[#FDEDF0] border-0 shadow-md rounded-2xl">
+              <Card key={i} className="p-6 bg-[#81B9EE] border-0 shadow-md rounded-2xl">
                 <div className="animate-pulse">
                   <div className="h-4 bg-gray-300 rounded w-1/2 mb-4"></div>
                   <div className="h-8 bg-gray-300 rounded w-1/4 mb-2"></div>
