@@ -117,14 +117,15 @@ export const Hero = () => {
       >
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-3 gap-8 md:gap-16">
-            <Stat label="Assets Under Management" value={[insert number here]} suffix="M+" />
-            <Stat label="Active Members" value={[insert number here]} />
-            <Stat label="Annual Return" value={[insert number here]} suffix="%" />
+            {/* will change numbers later, just need to run */}
+            <Stat label="Assets Under Management" value={250} suffix="M+" /> 
+            <Stat label="Active Members" value={250} />
+            <Stat label="Annual Return" value={250} suffix="%" />
           </div>
         </div>
       </motion.div>
       
-      {/* Gradient fade to next section */}
+      
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ivory to-transparent" />
     </section>
   );

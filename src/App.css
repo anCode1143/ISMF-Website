@@ -33,6 +33,10 @@
   }
 }
 
+@media (max-width: 767px) {
+  /* iPhone Responsive Design */
+}
+
 .card {
   padding: 2em;
 }
