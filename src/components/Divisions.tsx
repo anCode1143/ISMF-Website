@@ -49,7 +49,7 @@ export const Divisions = () => {
 
         <Card className="mt-12 p-6 bg-accent/10 border-accent/20">
           <p className="text-center text-muted-foreground">
-            <strong className="text-accent">Sector Coverage:</strong> Each division is led by dedicated analysts who specialize in understanding 
+            <strong className="text-accent">Sector Coverage:</strong> Each division is led by student analysts who learn to understand 
             industry trends, competitive dynamics, and company fundamentals within their sector.
           </p>
         </Card>

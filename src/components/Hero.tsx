@@ -67,7 +67,7 @@ export const Hero = () => {
               Irish Student Managed Fund
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-medium leading-relaxed tracking-wide">
-            Welcome to the Irish SMF, where education meets empowerment. We're on a mission to revolutionise the student experience by providing a unique investment platform tailored for students.
+            Welcome to the Irish Student Managed Fund, where education meets empowerment. We're on a mission to revolutionise the student experience by providing a unique investment platform tailored for students.
             </p>
           </motion.div>
           

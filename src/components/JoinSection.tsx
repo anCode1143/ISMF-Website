@@ -8,7 +8,6 @@ const benefits = [
   "Networking with finance professionals and peers",
   "Resume-building practical experience",
   "Mentorship from experienced fund managers",
-  "Access to Bloomberg terminals and research tools",
   "Participation in investment competitions"
 ];
 

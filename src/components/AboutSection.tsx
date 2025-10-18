@@ -5,7 +5,7 @@ const features = [
   {
     icon: BookOpen,
     title: "Learn by Doing",
-    description: "Get hands-on experience managing real capital in financial markets, applying classroom theory to actual investment decisions."
+    description: "Get hands-on experience analysing financial data and making investment decisions, taking conceptual knowledge and applying it to the real-world.."
   },
   {
     icon: TrendingUp,
@@ -33,7 +33,7 @@ export const AboutSection = () => {
           <p className="text-lg text-muted-foreground">
             The Irish Student Managed Fund is a student-led investment organization where members learn finance 
             by managing a real portfolio. We combine academic theory with practical experience, 
-            preparing the next generation of financial professionals.
+            preparing the next generation of professionals in the finance and technology sectors.
           </p>
         </div>
 
@@ -63,9 +63,9 @@ export const AboutSection = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-bold mb-4 text-white">Our Mission</h3>
             <p className="text-lg text-white/90">
-              To provide Irish students with unparalleled practical experience in investment management, 
-              fostering financial literacy and professional development through collaborative learning 
-              and real-world portfolio management.
+              To provide Irish students with practical experience in investment management, 
+              developing financial literacy and professional development through collaborative learning 
+              and real-world application.
             </p>
           </div>
         </Card>
