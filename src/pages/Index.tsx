@@ -1,4 +1,4 @@
-import { Navigation } from "@/components/Navigation";
+// import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { StatsGrid } from "@/components/StatsGrid";
 import { PerformanceChart } from "@/components/PerformanceChart";
@@ -9,12 +9,12 @@ import { MacroDashboard } from "@/components/MacroDashboard";
 import { EducationSection } from "@/components/EducationSection";
 import { Partners } from "@/components/Partners";
 import { JoinSection } from "@/components/JoinSection";
-import { Footer } from "@/components/Footer";
+// import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
+
       <main>
         <div id="home">
           <Hero />
@@ -37,7 +37,7 @@ const Index = () => {
         <Partners />
         <JoinSection />
       </main>
-      <Footer />
+
     </div>
   );
 };
