@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Building2, ShoppingCart, Cpu, Coffee, Heart, Factory, Zap, Radio, Mountain, Home } from "lucide-react";
 
-const divisions = [
+const sectors = [
   { name: "Financials", icon: Building2, description: "Banks, insurance, and investment firms" },
   { name: "Consumer Staples", icon: ShoppingCart, description: "Essential goods and household products" },
   { name: "Technology", icon: Cpu, description: "Software, hardware, and IT services" },
@@ -14,20 +14,20 @@ const divisions = [
   { name: "Real Estate", icon: Home, description: "Property development and REITs" },
 ];
 
-export const Divisions = () => {
+export const Sectors = () => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Divisions</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Sectors</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Specialized research teams covering every major sector of the market
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-          {divisions.map((division, index) => {
-            const Icon = division.icon;
+          {sectors.map((sector, index) => {
+            const Icon = sector.icon;
             return (
               <Card 
                 key={index}
@@ -38,8 +38,8 @@ export const Divisions = () => {
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">{division.name}</h3>
-                    <p className="text-xs text-muted-foreground">{division.description}</p>
+                    <h3 className="font-bold mb-1">{sector.name}</h3>
+                    <p className="text-xs text-muted-foreground">{sector.description}</p>
                   </div>
                 </div>
               </Card>

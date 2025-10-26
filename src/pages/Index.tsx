@@ -4,7 +4,7 @@ import { StatsGrid } from "@/components/StatsGrid";
 import { PerformanceChart } from "@/components/PerformanceChart";
 import { PortfolioBreakdown } from "@/components/PortfolioBreakdown";
 import { AboutSection } from "@/components/AboutSection";
-import { Divisions } from "@/components/Divisions";
+import { Sectors } from "@/components/Sectors";
 import { MacroDashboard } from "@/components/MacroDashboard";
 import { EducationSection } from "@/components/EducationSection";
 import { Partners } from "@/components/Partners";
@@ -23,8 +23,8 @@ const Index = () => {
         <div id="about">
           <AboutSection />
         </div>
-        <div id="divisions">
-          <Divisions />
+        <div id="sectors">
+          <Sectors />
         </div>
         <div id="research">
           <MacroDashboard />

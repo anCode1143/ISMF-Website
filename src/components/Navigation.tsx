@@ -11,8 +11,7 @@ export const Navigation = () => {
   const { openModal } = useApplyModal();
 
   const navLinks = [
-    { label: "Home", to: "/" },
-    { label: "About ISMF", to: "/about" },
+    { label: "About", to: "/about" },
     { label: "Divisions", to: "/divisions" },
     { label: "Research", to: "/research" },
     { label: "Performance", to: "/performance" },
@@ -30,7 +29,6 @@ export const Navigation = () => {
           {/* Logo links to Home */}
           <Link to="/" className="flex items-center gap-2">
             <img src={ismfLogo} alt="ISMF Logo" className="h-10 w-auto" />
-            <span className="font-bold text-xl text-white">ISMF</span>
           </Link>
 
           {/* Desktop Nav */}
