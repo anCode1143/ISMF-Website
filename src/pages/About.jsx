@@ -2,11 +2,23 @@ import React, { useState } from "react"
 
 // Inline data for team members
 const teamData = [
-    { id: 1, name: "Bénédict", role: "Director of Equities", bio: "Leads the fundamental analysis and stock selection process.", contact: "benedict@ismf.ie" },
-    { id: 2, name: "Carole & Roisin", role: "Marketing and Events", bio: "Manages all external communications, branding, and event planning.", contact: "marketing@ismf.ie" },
-    { id: 3, name: "Tejal", role: "Chief Macroeconomist", bio: "Provides high-level economic analysis and forecasts influencing overall strategy.", contact: "tejal@ismf.ie" },
-    { id: 4, name: "Jonah", role: "Director of Quant", bio: "Oversees quantitative research, model development, and systematic strategies.", contact: "jonah@ismf.ie" },
-    { id: 5, name: "Tanya", role: "Director of Alternative Investments", bio: "Focuses on non-traditional assets like hedge funds, private equity, and real estate.", contact: "tanya@ismf.ie" },
+    { id: 1, name: "Bénédict", role: "Director of Equities", bio: "Leads the fundamental analysis and stock selection process.", contact: "" },
+    { id: 2, name: "Carole & Roisin", role: "Marketing and Events", bio: "Manages all external communications, branding, and event planning.", contact: "" },
+    { id: 3, name: "Tejal", role: "Chief Macroeconomist", bio: "Provides high-level economic analysis and forecasts influencing overall strategy.", contact: "" },
+    { id: 4, name: "Jonah", role: "Director of Quant", bio: "Oversees quantitative research, model development, and systematic strategies.", contact: "" },
+    { id: 5, name: "Tanya", role: "Director of Alternative Investments", bio: "Focuses on non-traditional assets like hedge funds, private equity, and real estate.", contact: "" },
+    // Additional roles (placeholders)
+    { id: 6, name: "Raj Aryan Upadhyaya", role: "CEO", bio: "", contact: "" },
+    { id: 7, name: "", role: "COO", bio: "", contact: "" },
+    { id: 8, name: "", role: "CFO", bio: "", contact: "" },
+    { id: 9, name: "", role: "Director of Equities", bio: "", contact: "" },
+    { id: 10, name: "", role: "Director of Alternative Investments", bio: "", contact: "" },
+    { id: 11, name: "", role: "Director of Quant", bio: "", contact: "" },
+    { id: 12, name: "", role: "CMO", bio: "", contact: "" },
+    { id: 13, name: "", role: "CTO", bio: "", contact: "" },
+    { id: 14, name: "", role: "Director of Events", bio: "", contact: "" },
+    { id: 15, name: "", role: "Director of Careers", bio: "", contact: "" },
+    { id: 16, name: "", role: "Chief Macroeconomist", bio: "", contact: "" },
 ]
 
 function TeamMemberCard({ member }){
@@ -23,7 +35,7 @@ function TeamMemberCard({ member }){
         >
             <div className="p-5 flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0f2240] text-[#f8f5e9] font-semibold">
-                    {member.name.split(' & ')[0].charAt(0)}
+                    {(member.name && member.name.split(' & ')[0]) ? member.name.split(' & ')[0].charAt(0) : (member.role ? member.role.charAt(0) : '')}
                 </div>
                 <div className="flex-1">
                     <h3 className="text-lg font-semibold tracking-tight">{member.name}</h3>
@@ -36,13 +48,15 @@ function TeamMemberCard({ member }){
                     <p className="text-sm leading-relaxed mb-3">
                         {member.bio}
                     </p>
-                    <a
-                        className="inline-flex items-center text-sm font-medium underline underline-offset-4 decoration-[#0f2240]/30 hover:decoration-[#0f2240]"
-                        href={`mailto:${member.contact}`}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        {member.contact}
-                    </a>
+                    {member.contact ? (
+                        <a
+                            className="inline-flex items-center text-sm font-medium underline underline-offset-4 decoration-[#0f2240]/30 hover:decoration-[#0f2240]"
+                            href={`mailto:${member.contact}`}
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            {member.contact}
+                        </a>
+                    ) : null}
                 </div>
             </div>
         </div>
