@@ -1,8 +1,6 @@
 // import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { StatsGrid } from "@/components/StatsGrid";
-import { PerformanceChart } from "@/components/PerformanceChart";
-import { PortfolioBreakdown } from "@/components/PortfolioBreakdown";
 import { AboutSection } from "@/components/AboutSection";
 import { Sectors } from "@/components/Sectors";
 import { MacroDashboard } from "@/components/MacroDashboard";
@@ -29,10 +27,7 @@ const Index = () => {
         <div id="research">
           <MacroDashboard />
         </div>
-        <div id="performance" className="container mx-auto px-4 py-16">
-          <PerformanceChart />
-        </div>
-        <PortfolioBreakdown />
+        {/* Performance content moved to /performance page */}
         <EducationSection />
         <Partners />
         <JoinSection />
