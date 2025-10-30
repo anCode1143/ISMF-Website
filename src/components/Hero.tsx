@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import ismfLogo from "@/assets/ismf-logo.png";
+import { useNavigate } from "react-router-dom";
 
 const Stat = ({ label, value, suffix = "", duration = 2.5 }: { label: string; value: number; suffix?: string; duration?: number }) => {
   return (
@@ -23,6 +24,7 @@ const Stat = ({ label, value, suffix = "", duration = 2.5 }: { label: string; va
 };
 
 export const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center text-center bg-gradient-to-br from-cornflower via-delft to-oxford text-white">
       {/* Animated background elements */}
@@ -85,6 +87,7 @@ export const Hero = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-4 group bg-blush text-oxford hover:bg-blush/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                onClick={() => navigate('/about')}
               >
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
