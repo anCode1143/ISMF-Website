@@ -12,6 +12,7 @@ import About from "@/pages/About.jsx";
 import Divisions from "@/pages/Divisions.jsx";
 import Research from "@/pages/Research.jsx";
 import Performance from "@/pages/Performance.jsx";
+import Events from "@/pages/Events.jsx";
 import Layout from "@/components/Layout.jsx"
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ const App = () => {
 
               <Route path="/about" element={<About />} />
               <Route path="/divisions" element={<Divisions />} />
+              <Route path="/events" element={<Events />} />
               <Route path="/research" element={<Research />} />
               <Route path="/performance" element={<Performance />} />
 

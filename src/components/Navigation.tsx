@@ -13,6 +13,7 @@ export const Navigation = () => {
   const navLinks = [
     { label: "About", to: "/about" },
     { label: "Divisions", to: "/divisions" },
+    { label: "Events", to: "/events" },
     { label: "Research", to: "/research" },
     { label: "Performance", to: "/performance" },
   ];
