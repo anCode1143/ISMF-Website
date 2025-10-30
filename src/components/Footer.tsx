@@ -57,7 +57,7 @@ export const Footer = () => {
             <h3 className="font-bold mb-4 text-white">Contact</h3>
             <ul className="space-y-2 text-white/80">
               <li>Dublin, Ireland</li>
-              <li><a href="mailto:info@ismf.ie" className="hover:text-cornflower transition-colors">info@ismf.ie</a></li>
+              <li><a href="mailto:irishstudentfund@gmail.com" className="hover:text-cornflower transition-colors">irishstudentfund@gmail.com</a></li>
             </ul>
           </div>
         </div>
