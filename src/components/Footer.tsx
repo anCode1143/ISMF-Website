@@ -32,10 +32,11 @@ export const Footer = () => {
                 <Mail className="h-6 w-6" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/irishsmf/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Visit ISMF Instagram page"
                 className="text-white/80 hover:text-[#E4405F] transition-all duration-300 transform hover:scale-110 hover:bg-white/10 p-2 rounded-lg"
-                onClick={(e) => e.preventDefault()}
               >
                 <Instagram className="h-6 w-6" />
               </a>
