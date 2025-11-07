@@ -99,14 +99,6 @@ const teamData = [
         initials: "JJ",
         photo: "/team/jonah-jjemba.png"
       },
-      {
-        name: "Louis Zhu",
-        role: "Director of Alternative Investments",
-        description: "",
-        division: "Macro Research",
-        initials: "LZ",
-        photo: "/team/louis-zhu.png"
-      }
 ];
 
 export default function About() {
