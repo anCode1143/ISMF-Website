@@ -107,9 +107,9 @@ function createMarketMovementMeetings(firstOccurrence: Date, occurrences = 4): C
         "Monthly committee touchpoint reviewing macro catalysts, cross-asset moves, and positioning updates across the fund.",
       start: occurrenceStart.toISOString(),
       end: occurrenceEnd.toISOString(),
-      location: "Research Collaboration Space, Trinity Business School",
+      location: "Online - Link provided to registered attendees",
       category: "Briefing",
-      mode: "Hybrid",
+      mode: "Online",
     };
   });
 }
