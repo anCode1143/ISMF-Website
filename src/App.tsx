@@ -8,7 +8,7 @@ import { useApplyModal } from "@/hooks/useApplyModal";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
-import About from "@/pages/About.jsx";
+import People from "@/pages/People.jsx";
 import Divisions from "@/pages/Divisions.jsx";
 import Research from "@/pages/Research.jsx";
 import Performance from "@/pages/Performance.jsx";
@@ -30,7 +30,7 @@ const App = () => {
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
 
-              <Route path="/about" element={<About />} />
+              <Route path="/people" element={<People />} />
               <Route path="/divisions" element={<Divisions />} />
               <Route path="/events" element={<Events />} />
               <Route path="/research" element={<Research />} />

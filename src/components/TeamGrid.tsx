@@ -15,6 +15,7 @@ interface TeamMember {
   division?: string;
   initials: string;
   photo?: string; // <-- NEW (optional)
+  linkedin?: string; // <-- NEW (optional)
 }
 
 interface TeamGridProps {
@@ -140,6 +141,24 @@ const TeamModal: React.FC<{
             <p className="text-[#4A4A4A] leading-relaxed">{member.description}</p>
           ) : (
             <p className="text-[#4A4A4A] italic">Additional information coming soon.</p>
+          )}
+          
+          {member.linkedin && (
+            <div className="pt-2">
+              <a
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  variant="outline"
+                  className="border-[#26437E] text-[#26437E] hover:bg-[#26437E] hover:text-white"
+                  size="sm"
+                >
+                  View LinkedIn Profile
+                </Button>
+              </a>
+            </div>
           )}
         </div>
       </DialogContent>

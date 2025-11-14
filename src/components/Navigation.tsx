@@ -11,7 +11,8 @@ export const Navigation = () => {
   const { openModal } = useApplyModal();
 
   const navLinks = [
-    { label: "About", to: "/about" },
+    {label: "Home", to: "/"},
+    { label: "People", to: "/people" },
     { label: "Divisions", to: "/divisions" },
     { label: "Events", to: "/events" },
     { label: "Research", to: "/research" },
