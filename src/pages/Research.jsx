@@ -68,7 +68,7 @@ export default function Research() {
 
             <div className="bg-[#F3F4F6] rounded-xl p-4 border border-[#E2E8F0] flex items-start gap-3">
                 <a
-                    href="/reports/ismf-macro-report-nov.pdf"
+                    href={`${import.meta.env.BASE_URL}reports/ismf-macro-report-nov.pdf`}
                     target="_blank"
                     rel="noopener noreferrer"
                 >
@@ -89,7 +89,7 @@ export default function Research() {
 
           <div className="mt-6">
             <a
-              href="/reports/ismf-macro-report-nov.pdf"
+              href={`${import.meta.env.BASE_URL}reports/ismf-macro-report-nov.pdf`}
               target="_blank"
               rel="noopener noreferrer"
             >
