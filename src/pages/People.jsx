@@ -9,7 +9,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "RAU",
-        photo: "/team/raj-aryan-upadhyaya.png",
+        photo: `${import.meta.env.BASE_URL}team/raj-aryan-upadhyaya.png`,
         linkedin: "https://www.linkedin.com/in/raupadhyaya04/"
       },
       {
@@ -18,7 +18,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "CK",
-        photo: "/team/caius-kauppi.png",
+        photo: `${import.meta.env.BASE_URL}team/caius-kauppi.png`,
         linkedin: "https://www.linkedin.com/in/caiuskauppi/"
       },
       {
@@ -27,7 +27,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "JC",
-        photo: "/team/juliet-carty.png"
+        photo: `${import.meta.env.BASE_URL}team/juliet-carty.png`
       },
       {
         name: "Krutika Dwivedi",
@@ -35,7 +35,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "KD",
-        photo: "/team/krutika-dwivedi.png",
+        photo: `${import.meta.env.BASE_URL}team/krutika-dwivedi.png`,
         linkedin: "https://www.linkedin.com/in/krutika-dwivedi/"
       },
       {
@@ -44,7 +44,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "KA",
-        photo: "/team/kahmala-aamir.png"
+        photo: `${import.meta.env.BASE_URL}team/kahmala-aamir.png`
       },
       {
         name: "Tanya Jindal",
@@ -52,7 +52,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "TJ",
-        photo: "/team/tanya-jindal.png",
+        photo: `${import.meta.env.BASE_URL}team/tanya-jindal.png`,
         linkedin: "https://www.linkedin.com/in/tanya-jindal-cma-pmp/"
       },
       {
@@ -61,7 +61,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "TR",
-        photo: "/team/tejal-ramchandani.png",
+        photo: `${import.meta.env.BASE_URL}team/tejal-ramchandani.png`,
         linkedin: "https://www.linkedin.com/in/tejal-ramchandani-599666294/"
       },
       {
@@ -70,7 +70,7 @@ const teamData = [
         description: "",
         division: "Executive",
         initials: "CA",
-        photo: "/team/can-atasever.png",
+        photo: `${import.meta.env.BASE_URL}team/can-atasever.png`,
         linkedin: "https://www.linkedin.com/in/icancode/"
       },
       {
@@ -79,7 +79,7 @@ const teamData = [
         description: "",
         division: "Equities",
         initials: "BF",
-        photo: "/team/benedict-fromholz.png",
+        photo: `${import.meta.env.BASE_URL}team/benedict-fromholz.png`,
         linkedin: "https://www.linkedin.com/in/benedict-fromholz/"
       },
       {
@@ -88,7 +88,7 @@ const teamData = [
         description: "",
         division: "Marketing",
         initials: "CM",
-        photo: "/team/carole-misdari.png",
+        photo: `${import.meta.env.BASE_URL}team/carole-misdari.png`,
         linkedin: "https://www.linkedin.com/in/carole-misdari-2a7674334/"
       },
       {
@@ -97,7 +97,7 @@ const teamData = [
         description: "",
         division: "Marketing",
         initials: "ROS",
-        photo: "/team/roisin-osullivan-smyth.png",
+        photo: `${import.meta.env.BASE_URL}team/roisin-osullivan-smyth.png`,
         linkedin: "https://www.linkedin.com/in/roisinosullivansmyths/"
       },
       {
@@ -106,7 +106,7 @@ const teamData = [
         description: "",
         division: "Macro Research",
         initials: "JJ",
-        photo: "/team/jonah-jjemba.png",
+        photo: `${import.meta.env.BASE_URL}team/jonah-jjemba.png`,
         linkedin: "https://www.linkedin.com/in/jonah-jjemba-9042a01b7/"
       },
 ];
