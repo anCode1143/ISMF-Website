@@ -22,12 +22,13 @@ const teamData = [
         linkedin: "https://www.linkedin.com/in/caiuskauppi/"
       },
       {
-        name: "Juliet Carty",
+        name: "Juliette Carty",
         role: "Chairperson",
         description: "",
         division: "Executive",
         initials: "JC",
-        photo: `${import.meta.env.BASE_URL}team/juliet-carty.png`
+        photo: `${import.meta.env.BASE_URL}team/juliet-carty.png`,
+        linkedin: "https://www.linkedin.com/in/juliette-carty-b325a5270/"
       },
       {
         name: "Krutika Dwivedi",
@@ -39,12 +40,13 @@ const teamData = [
         linkedin: "https://www.linkedin.com/in/krutika-dwivedi/"
       },
       {
-        name: "Kahmala Aamir",
+        name: "Kashmala Aamir",
         role: "Chief Operations Officer",
         description: "",
         division: "Executive",
         initials: "KA",
-        photo: `${import.meta.env.BASE_URL}team/kahmala-aamir.png`
+        photo: `${import.meta.env.BASE_URL}team/kahmala-aamir.png`,
+        linkedin: "https://www.linkedin.com/in/kashmala1aamir/"
       },
       {
         name: "Tanya Jindal",

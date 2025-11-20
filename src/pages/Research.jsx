@@ -6,30 +6,34 @@ export default function Research() {
   return (
     <main className="min-h-screen bg-[#FAF9F5] text-[#0A0A0A] pt-24">
       {/* Hero / Intro */}
-      <section className="max-w-5xl mx-auto px-6 pb-12">
-        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
-          Research
-        </h1>
+      <section className="max-w-5xl mx-auto px-6 pb-20 grid gap-8 md:grid-cols-[1.8fr,1.4fr]">
+        <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 border border-[#E2E8F0] mb-8 mt-8">
+          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
+            Research
+          </h1>
 
-        <p className="text-lg text-[#3A3A3A] max-w-3xl leading-relaxed">
-          At the Irish Student Managed Fund, research underpins every investment
-          decision. Our Macro Research Team publishes a{" "}
-          <span className="font-semibold">bi-monthly macro outlook</span>,
-          combining top-down analysis of growth, inflation and central bank
-          policy with bottom-up views across sectors and asset classes.
-        </p>
+          <p className="text-lg text-[#3A3A3A] max-w-3xl leading-relaxed">
+            At the Irish Student Managed Fund, research underpins every investment
+            decision. Our Macro Research Team publishes a{" "}
+            <span className="font-semibold">bi-monthly macro outlook</span>,
+            combining top-down analysis of growth, inflation and central bank
+            policy with bottom-up views across sectors and asset classes.
+          </p>
 
-        <p className="mt-4 text-[#4A4A4A] max-w-3xl leading-relaxed">
-          These reports guide our portfolio positioning across equities, macro
-          and alternatives, and help our members develop a deeper understanding
-          of the forces shaping global markets.
-        </p>
+          <p className="text-lg text-[#3A3A3A] max-w-3xl leading-relaxed">
+            These reports guide our portfolio positioning across equities, macro
+            and alternatives, and help our members develop a deeper understanding
+            of the forces shaping global markets.
+          </p>
+        </div>
       </section>
 
       {/* Content sections */}
       <section className="max-w-5xl mx-auto px-6 pb-20 grid gap-8 md:grid-cols-[1.8fr,1.4fr]">
         {/* Bi-monthly macro publication card */}
         <div className="bg-white rounded-2xl shadow-md p-6 sm:p-8 border border-[#E2E8F0]">
+         
+
           <h2 className="text-2xl font-semibold mb-3 text-[#0A0A0A]">
             Bi-Monthly Macro Outlook
           </h2>
