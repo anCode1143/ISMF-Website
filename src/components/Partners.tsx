@@ -11,7 +11,8 @@ const partners = [
 
 export const Partners = () => {
   return (
-    <section className="py-16 bg-muted/30">
+    // Background: remove light blue/muted wash so this section sits on the main page background
+    <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Partners & Sponsors</h2>
@@ -26,7 +27,8 @@ export const Partners = () => {
             return (
               <Card 
                 key={index}
-                className="aspect-square flex items-center justify-center p-8 hover:shadow-lg transition-all hover:scale-105 duration-300 bg-muted/50"
+                // Visual: partner tiles are clear with a subtle outline instead of a solid light blue fill
+                className="aspect-square flex items-center justify-center p-8 border border-primary/20 bg-white hover:bg-primary/5 hover:shadow-lg transition-all hover:scale-105 duration-300"
               >
                 <div className="text-center space-y-3">
                   <Icon className="h-12 w-12 mx-auto text-muted-foreground/60" />
