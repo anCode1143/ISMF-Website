@@ -24,7 +24,8 @@ export const EducationSection = () => {
           </TabsList>
 
           <TabsContent value="basics" className="space-y-4 mt-6">
-            <Card className="p-6">
+            {/* Visual: basics cards on white with subtle outline instead of solid blue fill */}
+            <Card className="p-6 bg-white border border-primary/20">
               <div className="flex gap-4 mb-4">
                 <BookOpen className="h-8 w-8 text-primary" />
                 <div>
@@ -37,7 +38,7 @@ export const EducationSection = () => {
               </div>
             </Card>
 
-            <Card className="p-6">
+            <Card className="p-6 bg-white border border-primary/20">
               <div className="flex gap-4">
                 <GraduationCap className="h-8 w-8 text-primary" />
                 <div>
@@ -52,11 +53,13 @@ export const EducationSection = () => {
           </TabsContent>
 
           <TabsContent value="metrics" className="space-y-4 mt-6">
-            <Card className="p-6">
+            {/* Visual: metrics card switched to white surface with primary-tinted outline */}
+            <Card className="p-6 bg-white border border-primary/20">
               <h3 className="text-xl font-bold mb-4">Key Performance Indicators Explained</h3>
               
               <div className="space-y-4">
-                <div className="border-l-4 border-accent pl-4">
+                {/* Box: keep KPI callouts on white with subtle left accent, no solid blue fill */}
+                <div className="border-l-4 border-accent bg-white/60 rounded-md pl-4 py-3">
                   <h4 className="font-bold mb-1">Return (%)</h4>
                   <p className="text-sm text-muted-foreground">
                     How much money you made (or lost) on an investment, shown as a percentage. 
@@ -64,7 +67,7 @@ export const EducationSection = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-accent pl-4">
+                <div className="border-l-4 border-accent bg-white/60 rounded-md pl-4 py-3">
                   <h4 className="font-bold mb-1">Alpha</h4>
                   <p className="text-sm text-muted-foreground">
                     Measures how much better (or worse) we performed compared to the overall market. 
@@ -72,7 +75,7 @@ export const EducationSection = () => {
                   </p>
                 </div>
 
-                <div className="border-l-4 border-accent pl-4">
+                <div className="border-l-4 border-accent bg-white/60 rounded-md pl-4 py-3">
                   <h4 className="font-bold mb-1">Sharpe Ratio</h4>
                   <p className="text-sm text-muted-foreground">
                     Shows how much return we get for the risk we take. Higher is better - 
@@ -84,7 +87,8 @@ export const EducationSection = () => {
           </TabsContent>
 
           <TabsContent value="risk" className="space-y-4 mt-6">
-            <Card className="p-6">
+            {/* Visual: risk card uses transparent white background plus outline for a lighter feel */}
+            <Card className="p-6 bg-white border border-primary/20">
               <div className="flex gap-4">
                 <Shield className="h-8 w-8 text-primary" />
                 <div>
@@ -113,7 +117,8 @@ export const EducationSection = () => {
           </TabsContent>
 
           <TabsContent value="strategy" className="space-y-4 mt-6">
-            <Card className="p-6">
+            {/* Visual: strategy card aligned with new white + outlined card styling */}
+            <Card className="p-6 bg-white border border-primary/20">
               <div className="flex gap-4">
                 <LineChart className="h-8 w-8 text-primary" />
                 <div>
@@ -123,21 +128,22 @@ export const EducationSection = () => {
                   </p>
                   
                   <div className="space-y-3">
-                    <div className="p-3 bg-muted rounded-lg">
+                    {/* Boxes: inner strategy steps now white with outline instead of muted fill */}
+                    <div className="p-3 bg-white border border-primary/15 rounded-lg">
                       <strong className="text-primary">1. Company Research</strong>
                       <p className="text-sm text-muted-foreground mt-1">
                         We study company financials, business models, and competitive advantages
                       </p>
                     </div>
                     
-                    <div className="p-3 bg-muted rounded-lg">
+                    <div className="p-3 bg-white border border-primary/15 rounded-lg">
                       <strong className="text-primary">2. Valuation</strong>
                       <p className="text-sm text-muted-foreground mt-1">
                         We determine if a stock is priced fairly compared to its true value
                       </p>
                     </div>
                     
-                    <div className="p-3 bg-muted rounded-lg">
+                    <div className="p-3 bg-white border border-primary/15 rounded-lg">
                       <strong className="text-primary">3. Long-term Focus</strong>
                       <p className="text-sm text-muted-foreground mt-1">
                         We invest in quality companies we believe will grow over years, not just weeks
