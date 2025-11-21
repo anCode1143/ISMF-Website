@@ -15,10 +15,12 @@ export const JoinSection = () => {
   const { openModal } = useApplyModal();
   
   return (
-    <section className="py-16 bg-gradient-to-br from-primary/5 to-accent/5">
+    // Background: use the default page background and move the light blue into the join card itself
+    <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <Card className="p-8 md:p-12">
+          {/* Visual: soften the inner blue so the join card feels lighter and airier */}
+          <Card className="p-8 md:p-12 bg-primary/5">
             <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 Join the ISMF Team
