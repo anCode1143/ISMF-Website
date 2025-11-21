@@ -50,8 +50,9 @@ export const Footer = () => {
               <li><a href="#about" className="hover:text-cornflower transition-colors">About ISMF</a></li>
               {/* Navigation: Divisions now routes to the dedicated /divisions page instead of an in-page anchor */}
               <li><a href="/divisions" className="hover:text-cornflower transition-colors">Divisions</a></li>
-              <li><a href="#research" className="hover:text-cornflower transition-colors">Research</a></li>
-              <li><a href="#performance" className="hover:text-cornflower transition-colors">Performance</a></li>
+              {/* Navigation: Research and Performance now route to their dedicated pages */}
+              <li><a href="/research" className="hover:text-cornflower transition-colors">Research</a></li>
+              <li><a href="/performance" className="hover:text-cornflower transition-colors">Performance</a></li>
             </ul>
           </div>
 
