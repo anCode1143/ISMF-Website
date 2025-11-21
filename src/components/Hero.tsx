@@ -87,7 +87,8 @@ export const Hero = () => {
               <Button 
                 size="lg" 
                 className="text-lg px-8 py-4 group bg-blush text-oxford hover:bg-blush/90 transition-all duration-300 shadow-lg hover:shadow-xl"
-                onClick={() => navigate('/about')}
+                // Navigation: route Learn More to the People page
+                onClick={() => navigate('/people')}
               >
                 Learn More
                 <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />

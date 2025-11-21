@@ -31,7 +31,8 @@ export const Sectors = () => {
             return (
               <Card 
                 key={index}
-                className="p-6 hover:shadow-lg transition-all hover:scale-105 duration-300 cursor-pointer group"
+                // Visual: make sector tiles clear with a subtle outline instead of solid blue fill
+                className="p-6 border border-primary/25 bg-transparent hover:bg-primary/5 hover:shadow-lg transition-all hover:scale-105 duration-300 cursor-pointer group"
               >
                 <div className="flex flex-col items-center text-center space-y-3">
                   <div className="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
