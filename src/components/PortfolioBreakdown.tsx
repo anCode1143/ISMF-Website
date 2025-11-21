@@ -34,7 +34,8 @@ export const PortfolioBreakdown = () => {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <Card className="p-8">
+        {/* Visual: use a clean white card with subtle border around the portfolio allocation section */}
+        <Card className="p-8 bg-white border border-border">
           <div className="mb-8">
             <h2 className="text-3xl font-bold mb-2">Portfolio Allocation</h2>
             <p className="text-muted-foreground">
@@ -78,7 +79,8 @@ export const PortfolioBreakdown = () => {
               {data.map((sector, index) => (
                 <div 
                   key={index}
-                  className="flex items-center justify-between p-4 rounded-lg border hover:bg-muted/50 transition-colors cursor-pointer"
+                  // Visual: keep allocation rows on white with only a border highlight on hover (no blue fill)
+                  className="flex items-center justify-between p-4 rounded-lg border border-border hover:border-primary/40 hover:bg-primary/5 transition-colors cursor-pointer"
                   onMouseEnter={() => setActiveIndex(index)}
                   onMouseLeave={() => setActiveIndex(undefined)}
                 >
@@ -100,7 +102,7 @@ export const PortfolioBreakdown = () => {
             </div>
           </div>
 
-          <div className="mt-8 p-4 bg-accent/10 rounded-lg border border-accent/20">
+          <div className="mt-8 p-4 bg-white rounded-lg border border-accent/30">
             <p className="text-sm">
               <strong className="text-accent">💡 Why diversification matters:</strong> By spreading investments across different sectors, we reduce the risk that a downturn in any single industry will significantly impact our overall portfolio performance.
             </p>

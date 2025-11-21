@@ -37,7 +37,8 @@ export const PerformanceChart = () => {
   const isPositive = parseFloat(percentChange) > 0;
   
   return (
-    <Card className="p-6 space-y-6 hover:shadow-lg transition-shadow">
+    // Visual: ensure the portfolio performance panel sits on a clean white card (no dark blue background)
+    <Card className="p-6 space-y-6 bg-white border border-border hover:shadow-lg transition-shadow">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h3 className="text-2xl font-bold flex items-center gap-2">
