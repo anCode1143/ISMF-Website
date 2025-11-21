@@ -87,12 +87,6 @@ const modeColorMap: Record<DeliveryMode, string> = {
   Virtual: "bg-violet-100 text-violet-700 dark:bg-violet-500/10 dark:text-violet-300",
 };
 
-function getNextWeekMonday(baseDate: Date) {
-  const day = baseDate.getDay();
-  const daysUntilNextMonday = ((1 - day + 7) % 7) || 7;
-  return addDays(baseDate, daysUntilNextMonday);
-}
-
 function createMarketMovementMeetings(firstOccurrence: Date, occurrences = 4): CalendarEvent[] {
   const initialStart = set(firstOccurrence, { hours: 18, minutes: 0, seconds: 0, milliseconds: 0 });
 
@@ -109,7 +103,7 @@ function createMarketMovementMeetings(firstOccurrence: Date, occurrences = 4): C
       end: occurrenceEnd.toISOString(),
       location: "Online - Link provided to registered attendees",
       category: "Briefing",
-      mode: "Online",
+      mode: "Virtual",
     };
   });
 }
@@ -140,8 +134,10 @@ function getCalendarModifiers(events: HydratedEvent[]) {
 export function EventsCalendar({ events = defaultEvents, className }: EventsCalendarProps) {
   const today = startOfToday();
   const marketMovementMeetings = useMemo(
-    () => createMarketMovementMeetings(getNextWeekMonday(today)),
-    [today],
+    // Market Movement meetings: first occurrence fixed on 17th November 2025, repeating monthly thereafter.
+    // This ensures the 17th November meeting appears as a past event while later ones appear as upcoming.
+    () => createMarketMovementMeetings(new Date("2025-11-17T00:00:00.000Z")),
+    [],
   );
   const mergedEvents = useMemo(() => {
     const hasRecurringMeetings = events.some((event) => event.id.startsWith("market-movement-"));
@@ -179,12 +175,14 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
   return (
     <div
       className={cn(
-        "w-full rounded-3xl border border-border/60 bg-card/50 p-6 shadow-sm backdrop-blur-sm transition-colors sm:p-8",
+        // Visual: neutral container background (no blue tint) while keeping shape and shadow
+        "w-full rounded-3xl border border-border/60 bg-white p-6 shadow-sm backdrop-blur-sm transition-colors sm:p-8",
         "dark:bg-muted/20",
         className,
       )}
     >
-      <div className="mb-6 flex flex-wrap items-center gap-2">
+      {/* Spacing: generous top padding and header spacing for a clear page intro */}
+      <div className="mb-8 flex flex-wrap items-center gap-3">
         <Badge className="flex items-center gap-2 bg-primary/10 text-primary hover:bg-primary/20 dark:bg-primary/20 dark:text-primary-foreground/80">
           <CalendarDays className="h-4 w-4" />
           Events Dashboard
@@ -193,16 +191,20 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
           Stay close to upcoming opportunities across the ISMF community.
         </span>
       </div>
-      <div className="grid gap-8 lg:grid-cols-[1.35fr_1fr]">
-        <Card className="border-0 bg-background shadow-none dark:bg-card">
-          <CardHeader className="px-0 pt-0">
+      {/* Spacing: increased column gap for clearer separation between calendar and side panels */}
+      <div className="grid gap-10 lg:gap-12 lg:grid-cols-[1.35fr_1fr]">
+        {/* Visual: remove internal beige behind the Calendar heading and content */}
+        <Card className="border-0 bg-white shadow-none dark:bg-card">
+          {/* Spacing: bottom padding to separate heading from calendar surface */}
+          <CardHeader className="px-0 pt-0 pb-4">
             <CardTitle className="text-3xl font-semibold text-foreground">Calendar</CardTitle>
             <CardDescription>
               Browse upcoming sessions, workshops, and competitions. Select a date to view details.
             </CardDescription>
           </CardHeader>
           <CardContent className="px-0">
-            <div className="rounded-2xl border border-border/60 bg-muted/40 p-4 dark:bg-muted/30">
+            {/* Spacing: inner calendar card padding normalized to 24px (p-6); light blue background retained around the calendar grid */}
+            <div className="rounded-2xl border border-border/60 bg-muted/40 p-6 dark:bg-muted/30">
               <Calendar
                 mode="single"
                 selected={selectedDate}
@@ -218,7 +220,8 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
                 }}
               />
             </div>
-            <div className="mt-4 space-y-3 rounded-2xl border border-border/60 bg-background/60 p-4 dark:bg-muted/30">
+            {/* Spacing: more breathing room below the calendar and between content blocks on white surface */}
+            <div className="mt-5 space-y-4 rounded-2xl border border-border/60 bg-white p-5 dark:bg-muted/30">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-wider text-muted-foreground">Selected date</p>
@@ -245,9 +248,11 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
           </CardContent>
         </Card>
 
-        <div className="space-y-6">
+        {/* Spacing: consistent vertical rhythm between Upcoming and Recent Highlights */}
+        <div className="space-y-8">
           <Card className="border border-border/60">
-            <CardHeader>
+            {/* Spacing: card header padding kept within 16–24px range */}
+            <CardHeader className="px-5 pt-5 pb-3">
               <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
                 <Clock className="h-5 w-5 text-primary" />
                 Upcoming
@@ -256,7 +261,8 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
                 Confirm your spot and mark your calendar — seats for in-person sessions fill quickly.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            {/* Spacing: taller stack and more space between upcoming list items */}
+            <CardContent className="space-y-6 px-5 pb-5">
               {upcomingEvents.length === 0 && (
                 <p className="text-sm text-muted-foreground">
                   New events are on the way. Check back soon or subscribe to the members’ newsletter.
@@ -269,7 +275,8 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
           </Card>
 
           <Card className="border border-border/60 bg-muted/30">
-            <CardHeader>
+            {/* Spacing: mirror Upcoming card padding for consistent side-panel rhythm */}
+            <CardHeader className="px-5 pt-5 pb-3">
               <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
                 <CalendarDays className="h-5 w-5 text-primary" />
                 Recent Highlights
@@ -278,7 +285,8 @@ export function EventsCalendar({ events = defaultEvents, className }: EventsCale
                 Catch up on the latest committee activity and member-led initiatives.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-6">
+            {/* Spacing: extra space between recent highlight items for readability */}
+            <CardContent className="space-y-6 px-5 pb-5">
               {recentEvents.length === 0 && (
                 <p className="text-sm text-muted-foreground">
                   Our most recent events will appear here once the season kicks off.
@@ -301,17 +309,27 @@ function EventDialog({ event }: { event: HydratedEvent }) {
       <DialogTrigger asChild>
         <Button
           variant="outline"
-          className="group flex w-full flex-col items-start gap-2 rounded-2xl border-border/70 bg-background/60 px-4 py-4 text-left hover:border-primary/60 hover:bg-primary/5"
+          // Layout: larger, more prominent event boxes in Upcoming list
+          // - px-6 and increased py give more breathing room vertically
+          // - min-h ensures the light-blue sections feel taller even for short content
+          // - flex-col + gap-4 preserves spacing between title/date row and tags row
+          className="group flex w-full min-h-[96px] flex-col items-stretch gap-4 rounded-2xl border-border/70 bg-background/60 px-6 py-5 text-left hover:border-primary/60 hover:bg-primary/5 md:min-h-[110px] md:py-6"
         >
+          {/* Row 1: title + date/time with arrow aligned right and vertically centered */}
           <div className="flex w-full items-center justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">{event.title}</p>
+            <div className="flex flex-col gap-1">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                {event.title}
+              </p>
               <p className="text-xs text-muted-foreground">
-                {format(event.startDate, "EEE, MMM d")} · {format(event.startDate, "HH:mm")} - {format(event.endDate, "HH:mm")}
+                {format(event.startDate, "EEE, MMM d")} · {format(event.startDate, "HH:mm")} -{" "}
+                {format(event.endDate, "HH:mm")}
               </p>
             </div>
             <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary" />
           </div>
+
+          {/* Row 2: tags row kept inside the rounded box; flex-wrap so all badges stay contained */}
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline" className="border-transparent bg-primary/10 text-primary">
               {event.category}
@@ -323,7 +341,8 @@ function EventDialog({ event }: { event: HydratedEvent }) {
         </Button>
       </DialogTrigger>
       <DialogContent>
-        <DialogHeader className="space-y-3">
+        {/* Spacing: looser vertical stack inside dialog for a calmer reading experience */}
+        <DialogHeader className="space-y-4">
           <Badge variant="outline" className="w-fit border-primary/40 text-primary">
             {event.category}
           </Badge>
@@ -375,12 +394,14 @@ function EventListItem({
   return (
     <div
       className={cn(
-        "rounded-2xl border border-border/60 bg-background/60 p-4 transition-colors hover:border-primary/60 hover:bg-primary/5",
+        // Spacing: standard 20–24px padding on event cards for consistent rhythm
+        "rounded-2xl border border-border/60 bg-background/60 p-5 transition-colors hover:border-primary/60 hover:bg-primary/5",
         accent === "primary" && "border-primary/40 bg-primary/5 hover:bg-primary/10",
-        compact && "p-3",
+        compact && "p-4",
       )}
     >
-      <div className="flex flex-col gap-2">
+      {/* Spacing: vertical gaps between title, description, and meta data */}
+      <div className="flex flex-col gap-3">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-sm font-semibold text-foreground">{event.title}</p>
