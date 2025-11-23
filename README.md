@@ -1,6 +1,6 @@
-# Irish Student Management Fund Website
+# Irish Student Managed Fund Website
 
-A modern website for the Irish Student Management Fund (ISMF) showcasing our mission to empower students through finance, research, and trading opportunities.
+A modern website for the Irish Student Managed Fund (ISMF) showcasing our mission to empower students through finance, research, and trading opportunities.
 
 ## 🎯 Project Overview
 
