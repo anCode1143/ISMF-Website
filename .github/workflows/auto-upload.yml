@@ -1,0 +1,57 @@
+name: Auto Upload Content
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  process-macro-report:
+    if: contains(github.event.issue.labels.*.name, 'macro-report')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Extract PDF from issue
+        run: |
+          # GitHub Action downloads attachment from issue
+          # Saves to public/reports/YYYY-MM.pdf
+          
+      - name: Update latest.json
+        run: |
+          echo '{
+            "title": "${{ github.event.issue.title }}",
+            "date": "$(date +%Y-%m)",
+            "file": "$(date +%Y-%m).pdf"
+          }' > public/reports/latest.json
+          
+      - name: Commit and push
+        run: |
+          git config user.name "ISMF Bot"
+          git config user.email "ismfreports@gmail.com"
+          git add public/reports/
+          git commit -m "📄 New macro report: ${{ github.event.issue.title }}"
+          git push
+          
+      - name: Close issue
+        run: gh issue close ${{ github.event.issue.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  process-event:
+    if: contains(github.event.issue.labels.*.name, 'event')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Parse event details
+        run: |
+          # Extract title, date, description from issue body
+          # Append to src/data/events.json
+          
+      - name: Commit and push
+        run: |
+          git config user.name "ISMF Bot"
+          git config user.email "ismfreports@gmail.com"
+          git add src/data/events.json
+          git commit -m "📅 New event: ${{ github.event.issue.title }}"
+          git push
