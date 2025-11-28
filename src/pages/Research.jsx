@@ -3,6 +3,18 @@ import { FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Research() {
+
+
+  const [latestReport, setLatestReport] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch(`${import.meta.env.BASE_URL}reports/latest.json`)
+      .then(r => r.json())
+      .then(setLatestReport);
+  }, []);
+
+
+
   return (
     <main className="min-h-screen bg-[#FAF9F5] text-[#0A0A0A] pt-24">
       {/* Hero / Intro */}
@@ -59,7 +71,7 @@ export default function Research() {
         </div>
 
         {/* Latest insights card */}
-        <div className="bg-white rounded-2xl m-10px shadow-md p-6 sm:p-7 border border-[#E2E8F0]  flex flex-col justify-between">
+        <div className="bg-white rounded-2xl m-10px shadow-md p-6 sm:p-7 border border-[#E2E8F0]  flex flex-col justify-between mb-4">
           <div>
             <h3 className="text-xl font-semibold mb-2 text-[#0A0A0A]">
               See our latest insights
@@ -78,34 +90,20 @@ export default function Research() {
                 >
                     <FileText className="w-6 h-6 text-[#26437E]" />
                     <div>
-                    <p className="text-sm font-semibold text-[#0A0A0A]">
-                    ISMF Macro Outlook — November Edition
-                    </p>
-                    <p className="text-xs text-[#4A4A4A] mt-1 leading-relaxed">
-                    A concise overview of the macro environment, market themes,
-                    and our current positioning.
-                    </p>
+                      <p className="text-sm font-semibold text-[#0A0A0A]">
+                      ISMF Macro Outlook — November Edition
+                      </p>
+    
+                      <p className="text-xs text-[#4A4A4A] mt-1 leading-relaxed">
+                      A concise overview of the macro environment, market themes,
+                      and our current positioning.
+                      </p>
                     </div>
                 </a>
             
             </div>
           </div>
 
-          <div className="mt-6">
-            <a
-              href={`${import.meta.env.BASE_URL}reports/ismf-macro-report-nov.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button className="w-full bg-[#26437E] hover:bg-[#1F3262] text-white font-semibold">
-                Download the latest macro report
-              </Button>
-            </a>
-
-            <p className="mt-2 text-xs text-[#4A4A4A] text-center">
-              PDF report • Macro Research Team
-            </p>
-          </div>
         </div>
       </section>
     </main>
