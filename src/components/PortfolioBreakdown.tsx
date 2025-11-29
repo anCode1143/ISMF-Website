@@ -36,13 +36,6 @@ export const PortfolioBreakdown = () => {
       <div className="container mx-auto px-4">
         {/* Visual: use a clean white card with subtle border around the portfolio allocation section */}
         <Card className="p-8 bg-white border border-border">
-          <div className="mb-8">
-            <h2 className="text-3xl font-bold mb-2">Portfolio Allocation</h2>
-            <p className="text-muted-foreground">
-              Sector diversification to manage risk and maximize returns
-            </p>
-          </div>
-
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="h-[400px]">
               <ResponsiveContainer width="100%" height="100%">

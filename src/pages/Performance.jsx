@@ -8,11 +8,11 @@ export default function Performance(){
     return (
         <section className="container mx-auto px-4 py-16">
             <div className="mb-12">
-                <h1 className="text-3xl font-bold mb-6">Portfolio Performance</h1>
+                <h1 className="text-3xl font-bold mb-6 text-center">Portfolio Performance</h1>
                 <PerformanceChart />
             </div>
             <div>
-                <h2 className="text-2xl font-semibold mb-6">Portfolio Allocation</h2>
+                <h2 className="text-3xl font-bold mb-6 text-center">Portfolio Allocation</h2>
                 <PortfolioBreakdown />
             </div>
             <div id="research">
