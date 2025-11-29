@@ -104,11 +104,20 @@ const teamData = [
       },
       {
         name: "Jonah Jjemba",
-        role: "Director of Quant",
+        role: "Co-Director of Quant",
         description: "",
         division: "Quantitative Finance",
         initials: "JJ",
         photo: `${import.meta.env.BASE_URL}team/jonah-jjemba.png`,
+        linkedin: "https://www.linkedin.com/in/jonah-jjemba-9042a01b7/"
+      },
+      {
+        name: "Matus Sorocin",
+        role: "Co-Director of Quant",
+        description: "",
+        division: "Quantitative Finance",
+        initials: "MS",
+        photo: `${import.meta.env.BASE_URL}team/matus-sorocin.png`,
         linkedin: "https://www.linkedin.com/in/jonah-jjemba-9042a01b7/"
       },
 ];
