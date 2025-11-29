@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, Mail, Instagram } from "lucide-react";
+import { Linkedin, Mail, Instagram, Bold } from "lucide-react";
 import ismfLogo from "@/assets/ismf-logo.png";
 
 export const Footer = () => {
@@ -11,6 +11,9 @@ export const Footer = () => {
             <img src={ismfLogo} alt="ISMF Logo" className="h-16 w-auto mb-4" />
             <p className="text-white/80 mb-4">
               Empowering Irish students with hands-on investment experience and financial education.
+            </p>
+            <p className="text-white/80 mb-4">
+              Irish Student Managed Fund is a Company Limited by Guarantee, incorporated under the Companies Act 2014, Register Number 799927 
             </p>
             <div className="mb-4">
               <h3 className="font-semibold text-white mb-3">Follow Us</h3>
