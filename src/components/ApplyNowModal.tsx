@@ -13,9 +13,8 @@ interface Division {
 const divisions: Division[] = [
   { 
     id: 'alternative-investments', 
-    name: 'Alternative Investments Division', 
-    isOpen: true,
-    formUrl: 'https://docs.google.com/forms/d/1nMs0WqAzUG1FrnJuA40rRY6K_bjfHai2P0v9N7LuNRg/viewform?pli=1&pli=1&edit_requested=true'
+    name: 'Alternative Investments Division (Closed)', 
+    isOpen: false
   },
   { 
     id: 'marketing', 
@@ -36,8 +35,9 @@ const divisions: Division[] = [
   },
   { 
     id: 'technology', 
-    name: 'Technology Division (Closed)', 
-    isOpen: false 
+    name: 'Technology Development', 
+    isOpen: true,
+    formUrl: 'https://forms.gle/gMjy274VkhjAE9x26'
   },
 ];
 
